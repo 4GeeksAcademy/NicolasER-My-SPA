@@ -1,12 +1,23 @@
 //import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 // include your styles into the webpack bundle
 import "../styles/index.css";
 
 //import your own components
-import Home from "./component/home.jsx";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login/>,
+  },
+]);
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+ReactDOM.render(<router />, document.querySelector("#app"));
